@@ -8,47 +8,624 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Echo Above</title>
+    <meta
+        name="description"
+        content="Echo Above — música, atmosfera e histórias através do cosmos. Acesse nossas redes sociais e plataformas oficiais."
+    >
+
+    <meta name="theme-color" content="#05060a">
+
+    <title>Echo Above | Links Oficiais</title>
 
     <style>
+        :root {
+            --background: #05060a;
+            --surface: rgba(255, 255, 255, 0.055);
+            --surface-hover: rgba(255, 255, 255, 0.10);
+            --border: rgba(255, 255, 255, 0.12);
+            --border-hover: rgba(116, 218, 255, 0.55);
+            --text: #ffffff;
+            --muted: #aeb4c3;
+            --cyan: #73ddff;
+            --violet: #a174ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             min-height: 100vh;
-            margin: 0;
+            padding: 42px 18px;
 
+            font-family:
+                Inter,
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 50% -5%,
+                    rgba(61, 190, 255, 0.20),
+                    transparent 34%
+                ),
+                radial-gradient(
+                    circle at 10% 65%,
+                    rgba(109, 57, 255, 0.12),
+                    transparent 33%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(0, 174, 255, 0.09),
+                    transparent 30%
+                ),
+                var(--background);
+
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.30) 1px,
+                    transparent 1px
+                );
+
+            background-size: 55px 55px;
+            opacity: 0.15;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .profile {
+            margin-bottom: 34px;
+            text-align: center;
+        }
+
+        .logo-wrapper {
+            position: relative;
+
+            width: 132px;
+            height: 132px;
+            margin: 0 auto 22px;
+            padding: 3px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--cyan),
+                    var(--violet),
+                    var(--cyan)
+                );
+
+            box-shadow:
+                0 0 25px rgba(70, 198, 255, 0.28),
+                0 0 60px rgba(117, 72, 255, 0.18);
+
+            animation: floating 5s ease-in-out infinite;
+        }
+
+        .logo {
             display: flex;
             align-items: center;
             justify-content: center;
 
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
+            width: 100%;
+            height: 100%;
 
-            background: #050505;
+            border: 4px solid var(--background);
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 35% 25%,
+                    #202a43,
+                    #0d111d 45%,
+                    #030406 80%
+                );
+
+            color: white;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: -5px;
         }
 
-        .container {
-            padding: 30px;
+        .logo span:last-child {
+            color: var(--cyan);
+            transform: translateY(7px);
         }
 
         h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: clamp(31px, 7vw, 46px);
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
         }
 
-        p {
-            color: #bdbdc7;
-            font-size: 18px;
+        .subtitle {
+            margin-bottom: 15px;
+
+            color: var(--cyan);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .bio {
+            max-width: 500px;
+            margin: 0 auto;
+
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .featured {
+            position: relative;
+            display: block;
+
+            margin-bottom: 17px;
+            padding: 23px;
+
+            color: var(--text);
+            text-decoration: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(61, 198, 255, 0.15),
+                    rgba(133, 83, 255, 0.12)
+                );
+
+            border: 1px solid rgba(112, 218, 255, 0.32);
+            border-radius: 22px;
+
+            box-shadow:
+                0 16px 40px rgba(0, 0, 0, 0.24),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+            overflow: hidden;
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .featured::after {
+            content: "";
+            position: absolute;
+            top: -60%;
+            left: -40%;
+
+            width: 60%;
+            height: 220%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.08),
+                    transparent
+                );
+
+            transform: rotate(20deg);
+            transition: left 0.7s ease;
+        }
+
+        .featured:hover::after {
+            left: 120%;
+        }
+
+        .featured:hover {
+            transform: translateY(-3px);
+            border-color: rgba(112, 218, 255, 0.65);
+
+            box-shadow:
+                0 18px 50px rgba(29, 158, 229, 0.13),
+                inset 0 1px 0 rgba(255, 255, 255, 0.10);
+        }
+
+        .featured-label {
+            display: inline-block;
+            margin-bottom: 9px;
+
+            color: var(--cyan);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .featured strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 19px;
+        }
+
+        .featured p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            min-height: 76px;
+            padding: 15px 18px;
+
+            color: var(--text);
+            text-decoration: none;
+
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 19px;
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.04),
+                0 10px 30px rgba(0, 0, 0, 0.12);
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px) scale(1.008);
+
+            background: var(--surface-hover);
+            border-color: var(--border-hover);
+
+            box-shadow:
+                0 16px 38px rgba(0, 143, 214, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .link-left {
+            display: flex;
+            align-items: center;
+            min-width: 0;
+        }
+
+        .icon {
+            display: flex;
+            flex: 0 0 auto;
+            align-items: center;
+            justify-content: center;
+
+            width: 45px;
+            height: 45px;
+            margin-right: 14px;
+
+            color: white;
+
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 14px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .link-text {
+            min-width: 0;
+        }
+
+        .link-text strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+
+        .link-text span {
+            display: block;
+
+            color: var(--muted);
+            font-size: 13px;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .arrow {
+            flex: 0 0 auto;
+            margin-left: 12px;
+
+            color: var(--cyan);
+            font-size: 21px;
+
+            transition: transform 0.25s ease;
+        }
+
+        .link-card:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        footer {
+            margin-top: 38px;
+            text-align: center;
+        }
+
+        .footer-name {
+            margin-bottom: 7px;
+
+            color: rgba(255, 255, 255, 0.63);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-copy {
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 12px;
+        }
+
+        @keyframes floating {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 30px 14px;
+            }
+
+            .logo-wrapper {
+                width: 115px;
+                height: 115px;
+            }
+
+            .logo {
+                font-size: 41px;
+            }
+
+            h1 {
+                letter-spacing: 3px;
+            }
+
+            .bio {
+                font-size: 15px;
+            }
+
+            .link-card {
+                padding: 14px;
+            }
+
+            .icon {
+                width: 42px;
+                height: 42px;
+            }
+
+            .link-text span {
+                max-width: 215px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
 </head>
 
 <body>
-    <main class="container">
-        <h1>Echo Above</h1>
+    <main class="page">
 
-        <p>
-            Página oficial em construção.
-        </p>
+        <header class="profile">
+
+            <div class="logo-wrapper">
+                <div class="logo" aria-label="Echo Above">
+                    <span>E</span><span>A</span>
+                </div>
+            </div>
+
+            <h1>Echo Above</h1>
+
+            <p class="subtitle">
+                Official Links
+            </p>
+
+            <p class="bio">
+                Music born between silence, memory and the cosmos.
+                Follow Echo Above across our official platforms.
+            </p>
+
+        </header>
+
+        <a
+            class="featured"
+            href="https://open.spotify.com/intl-pt/artist/0pG0zURyqmuYn2EplUlj1E?si=qutgR4OoQHmtNQCmbmX60w"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ouça Echo Above no Spotify"
+        >
+            <span class="featured-label">
+                Listen now
+            </span>
+
+            <strong>
+                Echo Above on Spotify
+            </strong>
+
+            <p>
+                Listen to our music and follow the official artist profile.
+            </p>
+        </a>
+
+        <section class="links" aria-label="Links oficiais da Echo Above">
+
+            <a
+                class="link-card"
+                href="https://www.youtube.com/@EchoAboveMusic"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="link-left">
+                    <div class="icon" aria-hidden="true">▶</div>
+
+                    <div class="link-text">
+                        <strong>YouTube</strong>
+                        <span>Official videos and visual stories</span>
+                    </div>
+                </div>
+
+                <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a
+                class="link-card"
+                href="https://open.spotify.com/intl-pt/artist/0pG0zURyqmuYn2EplUlj1E?si=qutgR4OoQHmtNQCmbmX60w"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="link-left">
+                    <div class="icon" aria-hidden="true">♫</div>
+
+                    <div class="link-text">
+                        <strong>Spotify</strong>
+                        <span>Listen and follow Echo Above</span>
+                    </div>
+                </div>
+
+                <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a
+                class="link-card"
+                href="https://www.instagram.com/theechoabovemusic/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="link-left">
+                    <div class="icon" aria-hidden="true">◎</div>
+
+                    <div class="link-text">
+                        <strong>Instagram</strong>
+                        <span>Images, news and new releases</span>
+                    </div>
+                </div>
+
+                <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a
+                class="link-card"
+                href="https://www.tiktok.com/@echoabove"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="link-left">
+                    <div class="icon" aria-hidden="true">♪</div>
+
+                    <div class="link-text">
+                        <strong>TikTok</strong>
+                        <span>Short videos and cosmic fragments</span>
+                    </div>
+                </div>
+
+                <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a
+                class="link-card"
+                href="https://www.facebook.com/profile.php?id=61588481416544&amp;locale=pt_BR"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="link-left">
+                    <div class="icon" aria-hidden="true">f</div>
+
+                    <div class="link-text">
+                        <strong>Facebook</strong>
+                        <span>Follow our official page</span>
+                    </div>
+                </div>
+
+                <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a
+                class="link-card"
+                href="mailto:theechoabovemusic@gmail.com"
+            >
+                <div class="link-left">
+                    <div class="icon" aria-hidden="true">✉</div>
+
+                    <div class="link-text">
+                        <strong>Contact</strong>
+                        <span>theechoabovemusic@gmail.com</span>
+                    </div>
+                </div>
+
+                <span class="arrow" aria-hidden="true">→</span>
+            </a>
+
+        </section>
+
+        <footer>
+            <p class="footer-name">
+                Echo Above
+            </p>
+
+            <p class="footer-copy">
+                © 2026 Echo Above. All rights reserved.
+            </p>
+        </footer>
+
     </main>
 </body>
 </html>
